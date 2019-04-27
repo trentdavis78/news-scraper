@@ -60,6 +60,15 @@ h4 {
     position: relative;
     top: 40px;
 }
+.panel-body {
+    position: relative;
+    min-height: 175px;
+}
+.save {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
 .deleteNote {
 	display: inline-block;
 }
