@@ -52,6 +52,15 @@ h4 {
     color: #fff;
     transition: all 1s;
 }
+.btn-theme {
+    background-image: linear-gradient(to bottom right, #40668C , #036);
+    color: #fff;
+    transition: all 1s;
+}
+.btn-theme:hover {
+    background-image: linear-gradient(to top right, #40668C , #036);
+    color: #fff;
+}
 .btn-scrape:hover {
     background-color: #DB4052;
     color: #fff;
