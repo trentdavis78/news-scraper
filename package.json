@@ -1,29 +1,31 @@
 {
-  "name": "NewsScraper",
+  "name": "news-scraper",
   "version": "1.0.0",
   "description": "This will scrape articles from The New York Times.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chandnibpatel/NewsScraper.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chandnibpatel/NewsScraper/issues"
-  },
-  "homepage": "https://github.com/chandnibpatel/NewsScraper#readme",
+  "main": "server.js",
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
-    "mongoose": "^5.5.3",
+    "mongoose": "^5.5.4",
     "morgan": "^1.9.1",
     "request": "^2.88.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trentdavis78/news-scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trentdavis78/news-scraper/issues"
+  },
+  "homepage": "https://github.com/trentdavis78/news-scraper#readme"
 }

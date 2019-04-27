@@ -2,7 +2,64 @@ body {
     /* background-image: url(""); */
     padding-top: 70px;
 }
+.float-right {
+    float: right;
+}
+.nav-wrapper {
+    min-height: 100px;
+    background-color: #fff;
+    z-index: -2;
+    border-bottom: 1px solid #DDEEFF;
+    position: relative;
+}
+.navbar-theme {
+    border-top: 3px solid #c20017;
+    background-color: #036 !important;    
+}
+.navbar-theme a {
+    color: #fff;
+}
+.navbar-theme a:visited,
+.navbar-theme a:hover,
+.navbar-theme a:active
+ {
+    background-color: #40668C !important;
+  
+}
 
+
+.navbar-brand img {
+    width: 97px;
+    height: 96px;
+    position: relative;
+    top: -15px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    margin-left: 50px;  
+}
+h4 {
+    color: #036;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+}
+.btn-scrape {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    background-color: #c20017;
+    color: #fff;
+    transition: all 1s;
+}
+.btn-scrape:hover {
+    background-color: #DB4052;
+    color: #fff;
+}
+.main-content {
+    position: relative;
+    top: 40px;
+}
 .deleteNote {
 	display: inline-block;
 }
@@ -10,6 +67,15 @@ body {
 .previousNotes {
     display: inline-block;
     width: 90%
+}
+
+.articleImg {
+    width: 223px;
+    height: 125px;
+    object-fit: cover;
+    float: left;
+    margin-right: 20px;
+
 }
 
 #scrape {

@@ -82,7 +82,7 @@ app.get("/saved", function(req, res) {
 // A GET request to scrape the echojs website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
-  request("https://www.nytimes.com/", function(error, response, html) {
+  request("http://politics.theonion.com/", function(error, response, html) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
     // Now, we grab every h2 within an article tag, and do the following:
@@ -93,16 +93,14 @@ app.get("/scrape", function(req, res) {
 
       // Add the title and summary of every link, and save them as properties of the result object
 
-      summary = ""
-      if ($(this).find("ul").length) {
-        summary = $(this).find("li").first().text();
-      } else {
-        summary = $(this).find("p").text();
-      };
-
-      result.title = $(this).find("h2").text();
-      result.summary = summary;
-      result.link = "https://www.nytimes.com" + $(this).find("a").attr("href");
+      result.imgURL = $(this).find("picture source").attr("data-srcset");
+      console.log(result.imgURL);
+      result.title = $(this).find("h1.headline").text();
+      result.summary = $(this).find(".entry-summary p").text();
+      var realLink = $(this).find(".entry-title a").attr("href");
+      var fakeLink = realLink.replace("politics.theonion", "foxnews")
+      result.displayLink = fakeLink;
+      result.link =  realLink;
 
       // Using our Article model, create a new entry
       // This effectively passes the result object to the entry (and the title and link)
@@ -116,7 +114,7 @@ app.get("/scrape", function(req, res) {
         }
         // Or log the doc
         else {
-          console.log(doc);
+          // console.log(doc);
         }
       });
 
@@ -204,7 +202,7 @@ app.post("/notes/save/:id", function(req, res) {
     body: req.body.text,
     article: req.params.id
   });
-  console.log(req.body)
+  // console.log(req.body)
   // And save the new note the db
   newNote.save(function(error, note) {
     // Log any errors
